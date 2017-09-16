@@ -28,4 +28,9 @@ class JsonParser: NSObject
             }
         }
     }
+    
+    func parseForecast(_ dicitonary:[String:AnyObject])
+    {
+        
+    }
 }

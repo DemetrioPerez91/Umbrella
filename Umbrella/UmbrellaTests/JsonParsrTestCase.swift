@@ -46,7 +46,22 @@ class JsonParsrTestCase: XCTestCase {
         })
     }
     
-    
+    func testParseConditions()
+    {
+        DataManager.instance.city = "Atlanta"
+        DataManager.instance.state = "GA"
+        let expectParse = expectation(description: "Parse json")
+        WebServiceManager.instance.requestData(.Current, completion:
+            {
+                dictionary in
+                JsonParser.instance.parseForecast(dictionary!)
+                expectParse.fulfill()
+        })
+        waitForExpectations(timeout: 20, handler: {
+            _ in
+            
+        })
+    }
     
     
     

@@ -15,7 +15,7 @@ enum WeatherEnum:String {
 
 
 enum RequestType  {
-    case Geolocation, Current, TenDays
+    case Geolocation, Conditions, TenDays
     
 }
 

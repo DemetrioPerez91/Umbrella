@@ -22,7 +22,7 @@ class WebServiceManager: NSObject
             return "https://api.wunderground.com/api/4dfa0dce4b7cc546/geolookup/q/\(DataManager.instance.zipCode).json"
         }
     }
-    var apiForecastURL:String
+    var api10DayForecastURL:String
     {
         get
         {
@@ -31,11 +31,11 @@ class WebServiceManager: NSObject
         
     }
     
-    var api10DayForecastURL:String
+    var apiConditionsURL:String
     {
         get
         {
-            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/forecast/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
+            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/conditions/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
         }
     }
     
@@ -70,8 +70,8 @@ class WebServiceManager: NSObject
     {
         var result:URLRequest?
         switch requestType {
-        case .Current:
-            result = URLRequest(url: URL(string: apiGeolookupURL)!)
+        case .Conditions:
+            result = URLRequest(url: URL(string: apiConditionsURL)!)
             break
         case .TenDays:
             result = URLRequest(url: URL(string: api10DayForecastURL)!)
