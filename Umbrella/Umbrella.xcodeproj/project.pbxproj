@@ -21,6 +21,8 @@
 		CE0365951F6D63C8006E4911 /* ZipCodeReaderTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365941F6D63C8006E4911 /* ZipCodeReaderTestCase.swift */; };
 		CE0365971F6D6F03006E4911 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365961F6D6F03006E4911 /* WebServiceManager.swift */; };
 		CE0365991F6D6F40006E4911 /* WebServiceManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365981F6D6F40006E4911 /* WebServiceManagerTestCase.swift */; };
+		CE03659B1F6D9221006E4911 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03659A1F6D9221006E4911 /* JsonParser.swift */; };
+		CE03659D1F6D9252006E4911 /* JsonParsrTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03659C1F6D9252006E4911 /* JsonParsrTestCase.swift */; };
 		CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7837C11F6C67DF00F013BE /* AppDelegate.swift */; };
 		CE7837C71F6C67DF00F013BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C51F6C67DF00F013BE /* Main.storyboard */; };
 		CE7837C91F6C67DF00F013BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C81F6C67DF00F013BE /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		CE0365941F6D63C8006E4911 /* ZipCodeReaderTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeReaderTestCase.swift; sourceTree = "<group>"; };
 		CE0365961F6D6F03006E4911 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		CE0365981F6D6F40006E4911 /* WebServiceManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManagerTestCase.swift; sourceTree = "<group>"; };
+		CE03659A1F6D9221006E4911 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		CE03659C1F6D9252006E4911 /* JsonParsrTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParsrTestCase.swift; sourceTree = "<group>"; };
 		CE7837BE1F6C67DF00F013BE /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7837C11F6C67DF00F013BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7837C61F6C67DF00F013BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				CE03658B1F6D60A5006E4911 /* DataManager.swift */,
 				CE0365921F6D6355006E4911 /* ZipCodeReader.swift */,
 				CE0365961F6D6F03006E4911 /* WebServiceManager.swift */,
+				CE03659A1F6D9221006E4911 /* JsonParser.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				CE0365881F6CAE2C006E4911 /* DayTestCase.swift */,
 				CE0365941F6D63C8006E4911 /* ZipCodeReaderTestCase.swift */,
 				CE0365981F6D6F40006E4911 /* WebServiceManagerTestCase.swift */,
+				CE03659C1F6D9252006E4911 /* JsonParsrTestCase.swift */,
 			);
 			path = UmbrellaTests;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */,
 				CE03658F1F6D610D006E4911 /* Protocols.swift in Sources */,
 				CE0365871F6CACCA006E4911 /* DayViewModel.swift in Sources */,
+				CE03659B1F6D9221006E4911 /* JsonParser.swift in Sources */,
 				CE0365931F6D6355006E4911 /* ZipCodeReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0365991F6D6F40006E4911 /* WebServiceManagerTestCase.swift in Sources */,
+				CE03659D1F6D9252006E4911 /* JsonParsrTestCase.swift in Sources */,
 				CE0365951F6D63C8006E4911 /* ZipCodeReaderTestCase.swift in Sources */,
 				CE0365891F6CAE2C006E4911 /* DayTestCase.swift in Sources */,
 				CE0365851F6CA6DC006E4911 /* ForecastVMTestCase.swift in Sources */,
