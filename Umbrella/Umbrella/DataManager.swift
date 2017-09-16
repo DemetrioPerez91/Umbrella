@@ -14,6 +14,14 @@ class DataManager: NSObject
     override private init(){}
     
     var days:[DayViewModel]=[]
+    var refreshDelegate:RefreshTableProtocol?
+    var zipCode:String = ""
+    
+    func setDays(days:[DayViewModel])
+    {
+        self.days = days
+        refreshDelegate?.refresh()
+    }
     
 
 }

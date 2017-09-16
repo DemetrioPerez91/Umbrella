@@ -17,6 +17,8 @@
 		CE0365891F6CAE2C006E4911 /* DayTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365881F6CAE2C006E4911 /* DayTestCase.swift */; };
 		CE03658C1F6D60A5006E4911 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03658B1F6D60A5006E4911 /* DataManager.swift */; };
 		CE03658F1F6D610D006E4911 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03658E1F6D610D006E4911 /* Protocols.swift */; };
+		CE0365931F6D6355006E4911 /* ZipCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365921F6D6355006E4911 /* ZipCodeReader.swift */; };
+		CE0365951F6D63C8006E4911 /* ZipCodeReaderTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365941F6D63C8006E4911 /* ZipCodeReaderTestCase.swift */; };
 		CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7837C11F6C67DF00F013BE /* AppDelegate.swift */; };
 		CE7837C71F6C67DF00F013BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C51F6C67DF00F013BE /* Main.storyboard */; };
 		CE7837C91F6C67DF00F013BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C81F6C67DF00F013BE /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		CE0365881F6CAE2C006E4911 /* DayTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTestCase.swift; sourceTree = "<group>"; };
 		CE03658B1F6D60A5006E4911 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CE03658E1F6D610D006E4911 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		CE0365921F6D6355006E4911 /* ZipCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeReader.swift; sourceTree = "<group>"; };
+		CE0365941F6D63C8006E4911 /* ZipCodeReaderTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeReaderTestCase.swift; sourceTree = "<group>"; };
 		CE7837BE1F6C67DF00F013BE /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7837C11F6C67DF00F013BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7837C61F6C67DF00F013BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				CE03658B1F6D60A5006E4911 /* DataManager.swift */,
+				CE0365921F6D6355006E4911 /* ZipCodeReader.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				CE7837D81F6C67DF00F013BE /* Info.plist */,
 				CE0365841F6CA6DC006E4911 /* ForecastVMTestCase.swift */,
 				CE0365881F6CAE2C006E4911 /* DayTestCase.swift */,
+				CE0365941F6D63C8006E4911 /* ZipCodeReaderTestCase.swift */,
 			);
 			path = UmbrellaTests;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */,
 				CE03658F1F6D610D006E4911 /* Protocols.swift in Sources */,
 				CE0365871F6CACCA006E4911 /* DayViewModel.swift in Sources */,
+				CE0365931F6D6355006E4911 /* ZipCodeReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0365951F6D63C8006E4911 /* ZipCodeReaderTestCase.swift in Sources */,
 				CE0365891F6CAE2C006E4911 /* DayTestCase.swift in Sources */,
 				CE0365851F6CA6DC006E4911 /* ForecastVMTestCase.swift in Sources */,
 			);
