@@ -70,7 +70,24 @@ class JsonParsrTestCase: XCTestCase {
         })
     }
     
-    
+    func testParse10DayRequest()
+    {
+        DataManager.instance.city = "Atlanta"
+        DataManager.instance.state = "GA"
+        let expectParse = expectation(description: "Parse State")
+        WebServiceManager.instance.requestData(.TenDays, completion:
+            {
+                dictionary in
+                JsonParser.instance.parse10Days(dictionary!)
+                //Create adecuate parsing function
+                expectParse.fulfill()
+        })
+        waitForExpectations(timeout: 20, handler: {
+            _ in
+            XCTAssertEqual(DataManager.instance.days.count, 10)
+            
+        })
+    }
     
     
 }

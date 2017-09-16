@@ -26,7 +26,7 @@ class WebServiceManager: NSObject
     {
         get
         {
-            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/forecast10day/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
+            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/hourly10day/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
         }
         
     }

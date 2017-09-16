@@ -56,6 +56,63 @@ class JsonParser: NSObject
         
     }
     
+    func parse10Days(_ dictionary:[String:AnyObject])
+    {
+        //Prepare day array
+        var days:[DayViewModel] = []
+        var dayCurrentHour = 0
+        //Get RESULTS FROM DICTIONARY
+        if let hourly = dictionary["hourly_forecast"] as? [AnyObject]
+        {
+            var newDay = DayViewModel()
+            for forecast in hourly
+            {
+                var time = ""
+                var temp:Float = 0.0
+                var condition = ""
+                
+                if let ftime = forecast["FCTTIME"] as? [String:AnyObject]
+                {
+                    guard let dch = Int((ftime["hour"] as? String!)!)else
+                    {
+                        print("Failure")
+                        return
+                    }
+                    dayCurrentHour = dch
+                    if let t = ftime["civil"] as? String
+                    {
+                        time = t
+                    }
+                }
+                if let cond = forecast["condition"] as? String
+                {
+                    condition = cond
+                }
+                
+                if let temperature = forecast["temp"] as? [String:AnyObject]
+                {
+                    guard let degrees = Float((temperature["english"] as? String!)!)else
+                    {
+                        print("Failure")
+                        return
+                    }
+                    temp = degrees
+
+                }
+                let forecast = Forecast(temperature: temp, time: time, weather: condition)
+                newDay.append(forecast)
+                if dayCurrentHour == 23
+                {
+                    days.append(newDay)
+                    newDay = DayViewModel()
+                }
+                
+            }
+        }
+        DataManager.instance.days = days
+        
+    }
+    
     
 }
 
