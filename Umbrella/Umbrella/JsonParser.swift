@@ -109,7 +109,7 @@ class JsonParser: NSObject
                 
             }
         }
-        DataManager.instance.days = days
+        DataManager.instance.setDays(days: days)
         
     }
     
