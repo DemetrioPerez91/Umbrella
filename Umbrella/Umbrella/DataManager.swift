@@ -13,7 +13,7 @@ class DataManager: NSObject
     static let instance = DataManager()
     override private init(){}
     
-    var days:[DayViewModel]=[]
+    private(set) var days:[DayViewModel]=[]
     var currentConditions:ForecastVM?
     var refreshDelegate:RefreshTableProtocol?
     var zipCode:String = ""
