@@ -10,6 +10,8 @@
 		CE0365791F6C9F6A006E4911 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365771F6C9F6A006E4911 /* DayTableViewCell.swift */; };
 		CE03657A1F6C9F6A006E4911 /* DayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0365781F6C9F6A006E4911 /* DayTableViewCell.xib */; };
 		CE03657C1F6CA07D006E4911 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03657B1F6CA07D006E4911 /* Forecast.swift */; };
+		CE0365801F6CA1BB006E4911 /* ForecastVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03657F1F6CA1BB006E4911 /* ForecastVM.swift */; };
+		CE0365821F6CA42A006E4911 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365811F6CA42A006E4911 /* enums.swift */; };
 		CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7837C11F6C67DF00F013BE /* AppDelegate.swift */; };
 		CE7837C71F6C67DF00F013BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C51F6C67DF00F013BE /* Main.storyboard */; };
 		CE7837C91F6C67DF00F013BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C81F6C67DF00F013BE /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		CE0365771F6C9F6A006E4911 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		CE0365781F6C9F6A006E4911 /* DayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayTableViewCell.xib; sourceTree = "<group>"; };
 		CE03657B1F6CA07D006E4911 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		CE03657F1F6CA1BB006E4911 /* ForecastVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastVM.swift; sourceTree = "<group>"; };
+		CE0365811F6CA42A006E4911 /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		CE7837BE1F6C67DF00F013BE /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7837C11F6C67DF00F013BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7837C61F6C67DF00F013BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +72,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		CE03657E1F6CA19A006E4911 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				CE03657F1F6CA1BB006E4911 /* ForecastVM.swift */,
+			);
+			name = ModelView;
+			sourceTree = "<group>";
+		};
+		CE0365831F6CA452006E4911 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE0365811F6CA42A006E4911 /* enums.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		CE7837B51F6C67DF00F013BE = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +117,8 @@
 				CE0365771F6C9F6A006E4911 /* DayTableViewCell.swift */,
 				CE0365781F6C9F6A006E4911 /* DayTableViewCell.xib */,
 				CE03657D1F6CA150006E4911 /* Model */,
+				CE03657E1F6CA19A006E4911 /* ModelView */,
+				CE0365831F6CA452006E4911 /* Util */,
 			);
 			path = Umbrella;
 			sourceTree = "<group>";
@@ -217,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0365791F6C9F6A006E4911 /* DayTableViewCell.swift in Sources */,
+				CE0365821F6CA42A006E4911 /* enums.swift in Sources */,
+				CE0365801F6CA1BB006E4911 /* ForecastVM.swift in Sources */,
 				CE03657C1F6CA07D006E4911 /* Forecast.swift in Sources */,
 				CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */,
 			);

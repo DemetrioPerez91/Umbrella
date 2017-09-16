@@ -6,7 +6,7 @@
 //  Copyright © 2017 DemetrioPerez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 class Forecast:NSObject
