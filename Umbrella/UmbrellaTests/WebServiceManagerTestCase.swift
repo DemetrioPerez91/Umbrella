@@ -34,8 +34,8 @@ class WebServiceManagerTestCase: XCTestCase {
     
     func testStateCityURL()
     {
-        let WSM = WebServiceManager.instance.apiForecastURL
-        let url = "http://api.wunderground.com/api/4dfa0dce4b7cc546/forecast/q/GA/atlanta.json"
+        let WSM = WebServiceManager.instance.apiConditionsURL
+        let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/conditions/q/GA/atlanta.json"
         XCTAssertEqual(WSM, url)
     }
     

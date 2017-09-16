@@ -51,7 +51,7 @@ class JsonParsrTestCase: XCTestCase {
         DataManager.instance.city = "Atlanta"
         DataManager.instance.state = "GA"
         let expectParse = expectation(description: "Parse json")
-        WebServiceManager.instance.requestData(.Current, completion:
+        WebServiceManager.instance.requestData(.Conditions, completion:
             {
                 dictionary in
                 JsonParser.instance.parseForecast(dictionary!)
