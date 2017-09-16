@@ -26,8 +26,9 @@ class JsonParsrTestCase: XCTestCase {
     func testParseCityAndState()
     {
         
-        let parseCity = "GA"
-        let  parseState = "atlanta"
+        let parseCity = "Atlanta"
+        let  parseState = "GA"
+        DataManager.instance.zipCode = "30339"
         let expectParse = expectation(description: "Parse State")
         WebServiceManager.instance.requestData(.Geolocation, completion:
         {
@@ -44,6 +45,8 @@ class JsonParsrTestCase: XCTestCase {
             
         })
     }
+    
+    
     
     
     

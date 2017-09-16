@@ -14,22 +14,18 @@ class JsonParser: NSObject
     override init(){}
     func parseCityState(_ dictionary:[String:AnyObject])
     {
-        //var planets:[PlanetViewModel] = []
-        let array = dictionary["results"] as? [AnyObject]
-        
-        for i in array!
+        if let location = dictionary["location"] as? [String:AnyObject]
         {
-            let name = i["name"]!
-            print(name!)
-            let climate = i["climate"]!
-            print(climate!)
-           // let url = DataManager.manager.planetURL
-            //let newPLanet = Planet(name: name as! String, climate: climate as! String, url: url)
-            //planets.append(PlanetViewModel(planet: newPLanet))
-            
+            if let city = location["city"] as? String
+
+            {
+                DataManager.instance.city = city
+            }
+            if let state = location["state"] as? String
+
+            {
+                DataManager.instance.state = state
+            }
         }
-        
-        //return planets
     }
-    
 }
