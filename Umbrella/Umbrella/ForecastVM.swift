@@ -12,7 +12,7 @@ class ForecastVM: NSObject
 {
     
     let forecast:Forecast
-    init(forecast:Forecast){ self.forecast = forecast}
+    init(_ forecast:Forecast){ self.forecast = forecast}
     
     var temperatureText:String{get{return"\(forecast.temperature)˚"}}
     var timeLocalized:String{get{return"\(forecast.time)"}}

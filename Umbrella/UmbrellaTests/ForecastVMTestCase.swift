@@ -15,7 +15,7 @@ class ForecastVMTestCase: XCTestCase {
     override func setUp() {
         super.setUp()
         forecast = Forecast(temperature: 61, time: "lol", weather: "Sunny")
-        fVM = ForecastVM(forecast: forecast!)
+        fVM = ForecastVM( forecast!)
 
     }
     
@@ -29,7 +29,13 @@ class ForecastVMTestCase: XCTestCase {
     }
     
     func testIsCold()  {
-        XCTAssert(!(fVM?.isHot)!)
+        XCTAssertFalse(!(fVM?.isHot)!)
     }
+    
+    func testSunny()
+    {
+        XCTAssertEqual(fVM?.weather.rawValue, "Sunny")
+    }
+    
     
 }
