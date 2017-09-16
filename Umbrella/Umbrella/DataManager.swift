@@ -16,6 +16,8 @@ class DataManager: NSObject
     var days:[DayViewModel]=[]
     var refreshDelegate:RefreshTableProtocol?
     var zipCode:String = ""
+    var state:String = ""
+    var city:String = ""
     
     func setDays(days:[DayViewModel])
     {

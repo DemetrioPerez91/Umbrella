@@ -12,4 +12,24 @@ class WebServiceManager: NSObject
 {
     static let instance = WebServiceManager()
     override private init(){}
+    
+    var apiGeolookupURL:String
+    {
+        get
+        {
+            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/geolookup/q/\(DataManager.instance.zipCode).json"
+        }
+    }
+    var apiForecastURL:String
+    {
+        get
+        {
+            return "http://api.wunderground.com/api/4dfa0dce4b7cc546/forecast/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
+        }
+        
+    }
+    
+    
+    
+    
 }

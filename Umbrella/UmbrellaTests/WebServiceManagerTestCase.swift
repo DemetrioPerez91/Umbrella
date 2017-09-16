@@ -21,5 +21,21 @@ class WebServiceManagerTestCase: XCTestCase {
     }
     
 
+    func testLookUpURL()
+    {
+        DataManager.instance.zipCode = "30339"
+        let WSM = WebServiceManager.instance.apiGeolookupURL
+        let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/geolookup/q/30339.json"
+        XCTAssertEqual(WSM, url)
+    }
+    
+    func testStateCityURL()
+    {
+        DataManager.instance.city = "atlanta"
+        DataManager.instance.state = "GA"
+        let WSM = WebServiceManager.instance.apiForecastURL
+        let url = "http://api.wunderground.com/api/4dfa0dce4b7cc546/forecast/q/GA/atlanta.json"
+        XCTAssertEqual(WSM, url)
+    }
     
 }
