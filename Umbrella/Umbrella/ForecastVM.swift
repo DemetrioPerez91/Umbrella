@@ -48,5 +48,7 @@ class ForecastVM: NSObject
             
         }
     }
-
+    
+    var isColdest:Bool = false
+    var isHottest:Bool = false
 }
