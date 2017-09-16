@@ -31,7 +31,7 @@ class ForecastVM: NSObject
         }
     }
     
-    var temperatureInt:Int{get{return forecast.temperature}}
+    var temperatureFloat:Float{get{return forecast.temperature}}
     
     var isHot:Bool
     {

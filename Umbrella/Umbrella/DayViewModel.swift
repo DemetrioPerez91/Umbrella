@@ -27,12 +27,12 @@ class DayViewModel: NSObject
         }
         else
         {
-            if VM.temperatureInt > (hottest?.temperatureInt)!
+            if VM.temperatureFloat > (hottest?.temperatureFloat)!
             {
                 hottest = VM
             }
             
-            if VM.temperatureInt < (coldest?.temperatureInt)!
+            if VM.temperatureFloat < (coldest?.temperatureFloat)!
             {
                 coldest = VM
             }

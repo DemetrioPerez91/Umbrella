@@ -11,11 +11,11 @@ import UIKit
 
 class Forecast:NSObject
 {
-    let temperature:Int
+    let temperature:Float
     let time:String
     let weather:String
     
-    init(temperature:Int, time:String, weather:String)
+    init(temperature:Float, time:String, weather:String)
     {
         self.temperature = temperature
         self.time = time
