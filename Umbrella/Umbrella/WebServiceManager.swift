@@ -12,6 +12,8 @@ class WebServiceManager: NSObject
 {
     static let instance = WebServiceManager()
     override private init(){}
+    let config = URLSessionConfiguration.default
+    
     
     var apiGeolookupURL:String
     {
@@ -24,9 +26,60 @@ class WebServiceManager: NSObject
     {
         get
         {
-            return "http://api.wunderground.com/api/4dfa0dce4b7cc546/forecast/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
+            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/forecast10day/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
         }
         
+    }
+    
+    var api10DayForecastURL:String
+    {
+        get
+        {
+            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/forecast/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
+        }
+    }
+    
+    //get jsons from API
+    func requestData(_ requestType:RequestType,completion:@escaping([String:AnyObject]?)->())
+    {
+        let session = URLSession(configuration: config)
+        let request = getRequest(requestType: requestType)
+        let task = session.dataTask(with: request, completionHandler: {
+            (data,response,error) in
+            
+            if (error != nil||data == nil)
+            {
+                print(error!.localizedDescription)
+                
+            }
+            else{
+                do{
+                    let rootDictionary = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
+                    completion(rootDictionary)
+                    
+                }catch {
+                    print("Error with Json")
+                    completion(nil)
+                }
+            }
+        })
+        task.resume()
+    }
+    //set request depending on type
+    func getRequest(requestType:RequestType) ->URLRequest
+    {
+        var result:URLRequest?
+        switch requestType {
+        case .Current:
+            result = URLRequest(url: URL(string: apiGeolookupURL)!)
+            break
+        case .TenDays:
+            result = URLRequest(url: URL(string: api10DayForecastURL)!)
+            break
+        case .Geolocation:
+            result = URLRequest(url: URL(string: apiGeolookupURL)!)
+        }
+        return result!
     }
     
     
