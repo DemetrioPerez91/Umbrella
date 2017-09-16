@@ -29,8 +29,34 @@ class JsonParser: NSObject
         }
     }
     
-    func parseForecast(_ dicitonary:[String:AnyObject])
+    func parseConditions(_ dicitonary:[String:AnyObject])
     {
+        var temp:Float = 0.0
+        var weather:String = ""
+        var time:String = ""
+        if let currentobservation = dicitonary["current_observation"] as? [String:AnyObject]
+        {
+            if let tempf = currentobservation["temp_f"] as? Float
+            {
+                temp = tempf
+            }
+            if let weatherS = currentobservation["weather"] as? String
+            {
+                weather = weatherS
+            }
+            
+            let date = Date()
+            time = date.getCurrentTimeHourMinutes()
+            
+            
+        }
+        
+        let forecast = Forecast(temperature: temp, time: time, weather: weather)
+        DataManager.instance.currentConditions = ForecastVM(forecast)
         
     }
+    
+    
 }
+
+

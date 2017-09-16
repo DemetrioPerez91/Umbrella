@@ -14,6 +14,7 @@ class DataManager: NSObject
     override private init(){}
     
     var days:[DayViewModel]=[]
+    var currentConditions:ForecastVM?
     var refreshDelegate:RefreshTableProtocol?
     var zipCode:String = ""
     var state:String = ""

@@ -54,14 +54,22 @@ class JsonParsrTestCase: XCTestCase {
         WebServiceManager.instance.requestData(.Conditions, completion:
             {
                 dictionary in
-                JsonParser.instance.parseForecast(dictionary!)
+                JsonParser.instance.parseConditions(dictionary!)
                 expectParse.fulfill()
         })
         waitForExpectations(timeout: 20, handler: {
             _ in
+            let time = DataManager.instance.currentConditions?.time
+            let temp = DataManager.instance.currentConditions?.temperatureFloat
+            let weather = DataManager.instance.currentConditions?.weather.rawValue
+            XCTAssertNotEqual(time, "")
+            XCTAssertNotEqual(temp, 0.0)
+            XCTAssertNotEqual(weather, "")
+            
             
         })
     }
+    
     
     
     

@@ -9,7 +9,7 @@
 import Foundation
 
 enum WeatherEnum:String {
-    case Sunny = "Sunny"
+    case Sunny = "Sunny", PartlyCloudy = "Partly Cloudy"
     
 }
 

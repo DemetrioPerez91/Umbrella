@@ -15,7 +15,7 @@ class ForecastVM: NSObject
     init(_ forecast:Forecast){ self.forecast = forecast}
     
     var temperatureText:String{get{return"\(forecast.temperature)˚"}}
-    var timeLocalized:String{get{return"\(forecast.time)"}}
+    var time:String{get{return"\(forecast.time)"}}
     var weather:WeatherEnum
     {
         get{
