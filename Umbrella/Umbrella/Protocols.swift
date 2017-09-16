@@ -10,5 +10,4 @@ import Foundation
 
 protocol RefreshTableProtocol {
     func refresh()
-    
 }

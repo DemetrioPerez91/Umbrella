@@ -106,6 +106,23 @@
 			name = Singletons;
 			sourceTree = "<group>";
 		};
+		CE0365901F6D6179006E4911 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE0365911F6D6184006E4911 /* DayTableView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CE0365911F6D6184006E4911 /* DayTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE0365771F6C9F6A006E4911 /* DayTableViewCell.swift */,
+				CE0365781F6C9F6A006E4911 /* DayTableViewCell.xib */,
+			);
+			name = DayTableView;
+			sourceTree = "<group>";
+		};
 		CE7837B51F6C67DF00F013BE = {
 			isa = PBXGroup;
 			children = (
@@ -127,15 +144,14 @@
 		CE7837C01F6C67DF00F013BE /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
-				CE03658A1F6D6091006E4911 /* Singletons */,
 				CE7837C11F6C67DF00F013BE /* AppDelegate.swift */,
 				CE7837C51F6C67DF00F013BE /* Main.storyboard */,
 				CE7837C81F6C67DF00F013BE /* Assets.xcassets */,
 				CE7837CA1F6C67DF00F013BE /* LaunchScreen.storyboard */,
 				CE7837CD1F6C67DF00F013BE /* Info.plist */,
-				CE0365771F6C9F6A006E4911 /* DayTableViewCell.swift */,
-				CE0365781F6C9F6A006E4911 /* DayTableViewCell.xib */,
+				CE03658A1F6D6091006E4911 /* Singletons */,
 				CE03657D1F6CA150006E4911 /* Model */,
+				CE0365901F6D6179006E4911 /* View */,
 				CE03657E1F6CA19A006E4911 /* ViewModel */,
 				CE0365831F6CA452006E4911 /* Utility */,
 			);
