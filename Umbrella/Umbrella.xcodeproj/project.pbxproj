@@ -19,7 +19,6 @@
 		CE7837C71F6C67DF00F013BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C51F6C67DF00F013BE /* Main.storyboard */; };
 		CE7837C91F6C67DF00F013BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C81F6C67DF00F013BE /* Assets.xcassets */; };
 		CE7837CC1F6C67DF00F013BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7837CA1F6C67DF00F013BE /* LaunchScreen.storyboard */; };
-		CE7837D71F6C67DF00F013BE /* UmbrellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7837D61F6C67DF00F013BE /* UmbrellaTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		CE7837CB1F6C67DF00F013BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7837CD1F6C67DF00F013BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7837D21F6C67DF00F013BE /* UmbrellaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmbrellaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE7837D61F6C67DF00F013BE /* UmbrellaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaTests.swift; sourceTree = "<group>"; };
 		CE7837D81F6C67DF00F013BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +131,6 @@
 		CE7837D51F6C67DF00F013BE /* UmbrellaTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE7837D61F6C67DF00F013BE /* UmbrellaTests.swift */,
 				CE7837D81F6C67DF00F013BE /* Info.plist */,
 				CE0365841F6CA6DC006E4911 /* ForecastVMTestCase.swift */,
 				CE0365881F6CAE2C006E4911 /* DayTestCase.swift */,
@@ -260,7 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7837D71F6C67DF00F013BE /* UmbrellaTests.swift in Sources */,
 				CE0365891F6CAE2C006E4911 /* DayTestCase.swift in Sources */,
 				CE0365851F6CA6DC006E4911 /* ForecastVMTestCase.swift in Sources */,
 			);
