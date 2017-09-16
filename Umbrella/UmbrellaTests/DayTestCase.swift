@@ -10,6 +10,7 @@ import XCTest
 @testable import Umbrella
 
 class DayTestCase: XCTestCase {
+    
     var forecast1:Forecast?
     var forecast2:Forecast?
     var forecast3:Forecast?
@@ -21,6 +22,7 @@ class DayTestCase: XCTestCase {
     }
     
     override func setUp() {
+        
         forecast1 = Forecast(temperature: 61, time: "lol", weather: "Sunny")
         forecast2 = Forecast(temperature: 60, time: "lol", weather: "Sunny")
         forecast3 = Forecast(temperature: 59, time: "lol", weather: "Sunny")
@@ -40,16 +42,11 @@ class DayTestCase: XCTestCase {
         day?.append(forecast4!)
     }
     
-    
-    
-   
     func testHottest()
     {
         guard let fore = day?.hottest?.forecast else {return}
         guard let fore2 = forecast4 else {return}
-        
         XCTAssertEqual(fore, fore2)
-        
     }
     
     func testColdest()
@@ -57,15 +54,11 @@ class DayTestCase: XCTestCase {
         guard let fore = day?.hottest?.forecast else {return}
         guard let fore2 = forecast4 else {return}
         XCTAssertEqual(fore, fore2)
-        
     }
     
     func testAppendForecast()
     {
-        
         XCTAssertEqual(day?.forecasts.count, 4)
     }
-    
-
     
 }
