@@ -17,8 +17,11 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var forecastTableView: UITableView!
     
+    var currentDay:DayViewModel?
+    
     let orange = UIColor(colorLiteralRed: 1.0, green: 0.5519607843, blue: 0.0, alpha: 1)
     let blue = UIColor(colorLiteralRed: 0.133333333, green: 0.7003921568, blue: 1.0, alpha: 1)
+    let model:[UIColor] =  [UIColor.red, UIColor.red]
     override func viewDidLoad() {
         super.viewDidLoad()
         DataManager.instance.refreshConditionsDelegate = self
@@ -27,6 +30,7 @@ class ForecastViewController: UIViewController {
         forecastTableView.dataSource = self
         DataManager.instance.refreshConditionsDelegate?.refreshConditions()
         DataManager.instance.refreshtTableDelegate?.refresh()
+        forecastTableView.rowHeight = 300
         
     }
 
@@ -44,21 +48,31 @@ extension ForecastViewController:UITableViewDataSource
         return DataManager.instance.days.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = forecastTableView.dequeueReusableCell(withIdentifier: "dayCell")
-        cell?.textLabel?.text = "lol"
+        let cell = forecastTableView.dequeueReusableCell(withIdentifier: "Cell") as? DayTableViewCell
+        
+        currentDay = DataManager.instance.days[indexPath.row]
+        
         if indexPath.row == 0
         {
-            cell?.textLabel?.text = "Today"
+             cell?.DayLabel.text  = "Today"
         }
         else if indexPath.row == 1
         {
-            cell?.textLabel?.text  = "Tomorrow"
+            cell?.DayLabel.text  = "Tomorrow"
         }
         else
         {
-            cell?.textLabel?.text = "Day \(indexPath.row + 1)"
+            cell?.DayLabel.text = "Day \(indexPath.row + 1)"
         }
         return cell!
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let tableViewCell = cell as? DayTableViewCell else { return }
+        
+        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
     }
 }
 
@@ -93,4 +107,37 @@ extension ForecastViewController:RefreshCurrentConditions
         }
        
     }
+}
+
+
+extension ForecastViewController:UICollectionViewDelegate{}
+extension ForecastViewController:UICollectionViewDataSource
+{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (currentDay?.forecasts.count)!
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? ForecastCollectionViewCell
+        
+        
+        
+        if let forecast = currentDay?.forecasts[indexPath.row]{
+            cell?.timeLabel.text = forecast.time
+            cell?.condition.text = forecast.forecast.weather
+            cell?.temp.text = forecast.temperatureText
+            
+            if forecast.isHottest
+            {
+                cell?.backgroundColor = orange
+            }
+            else if forecast.isColdest
+            {
+                cell?.backgroundColor = blue
+            }
+        }
+        
+        return cell!
+    }
+    
 }

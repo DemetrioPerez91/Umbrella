@@ -28,6 +28,8 @@
 		CE0365B11F6DFB31006E4911 /* mdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0365B01F6DFB31006E4911 /* mdpi.png */; };
 		CE0365B31F6DFB41006E4911 /* hdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0365B21F6DFB41006E4911 /* hdpi.png */; };
 		CE0365B61F6E07ED006E4911 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0365B51F6E07ED006E4911 /* gear.png */; };
+		CE0365BA1F6EDD49006E4911 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365B91F6EDD49006E4911 /* DayTableViewCell.swift */; };
+		CE0365BC1F6EF064006E4911 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0365BB1F6EF064006E4911 /* ForecastCollectionViewCell.swift */; };
 		CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7837C11F6C67DF00F013BE /* AppDelegate.swift */; };
 		CE7837C71F6C67DF00F013BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C51F6C67DF00F013BE /* Main.storyboard */; };
 		CE7837C91F6C67DF00F013BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7837C81F6C67DF00F013BE /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		CE0365B01F6DFB31006E4911 /* mdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mdpi.png; sourceTree = "<group>"; };
 		CE0365B21F6DFB41006E4911 /* hdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hdpi.png; sourceTree = "<group>"; };
 		CE0365B51F6E07ED006E4911 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		CE0365B91F6EDD49006E4911 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
+		CE0365BB1F6EF064006E4911 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE7837BE1F6C67DF00F013BE /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7837C11F6C67DF00F013BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7837C61F6C67DF00F013BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				CE7837C51F6C67DF00F013BE /* Main.storyboard */,
 				CE7837CA1F6C67DF00F013BE /* LaunchScreen.storyboard */,
 				CE0365A91F6DF0C2006E4911 /* ForecastViewController.swift */,
+				CE0365BB1F6EF064006E4911 /* ForecastCollectionViewCell.swift */,
+				CE0365B91F6EDD49006E4911 /* DayTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -324,11 +330,13 @@
 				CE0365AA1F6DF0C2006E4911 /* ForecastViewController.swift in Sources */,
 				CE0365821F6CA42A006E4911 /* enums.swift in Sources */,
 				CE0365801F6CA1BB006E4911 /* ForecastVM.swift in Sources */,
+				CE0365BC1F6EF064006E4911 /* ForecastCollectionViewCell.swift in Sources */,
 				CE03658C1F6D60A5006E4911 /* DataManager.swift in Sources */,
 				CE03657C1F6CA07D006E4911 /* Forecast.swift in Sources */,
 				CE7837C21F6C67DF00F013BE /* AppDelegate.swift in Sources */,
 				CE03659F1F6DAB44006E4911 /* Extensions.swift in Sources */,
 				CE03658F1F6D610D006E4911 /* Protocols.swift in Sources */,
+				CE0365BA1F6EDD49006E4911 /* DayTableViewCell.swift in Sources */,
 				CE0365871F6CACCA006E4911 /* DayViewModel.swift in Sources */,
 				CE03659B1F6D9221006E4911 /* JsonParser.swift in Sources */,
 				CE0365931F6D6355006E4911 /* ZipCodeReader.swift in Sources */,
