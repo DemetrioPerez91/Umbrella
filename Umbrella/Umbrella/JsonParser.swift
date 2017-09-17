@@ -52,7 +52,8 @@ class JsonParser: NSObject
         }
         
         let forecast = Forecast(temperature: temp, time: time, weather: weather)
-        DataManager.instance.currentConditions = ForecastVM(forecast)
+        DataManager.instance.setConditions(ForecastVM(forecast))
+        
         
     }
     
