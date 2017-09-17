@@ -45,6 +45,18 @@ extension ForecastViewController:UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = forecastTableView.dequeueReusableCell(withIdentifier: "dayCell")
         cell?.textLabel?.text = "lol"
+        if indexPath.row == 0
+        {
+            cell?.textLabel?.text = "Today"
+        }
+        else if indexPath.row == 1
+        {
+            cell?.textLabel?.text  = "Tomorrow"
+        }
+        else
+        {
+            cell?.textLabel?.text = "Day \(indexPath.row + 1)"
+        }
         return cell!
     }
 }
