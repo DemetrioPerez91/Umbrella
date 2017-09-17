@@ -10,7 +10,6 @@ import UIKit
 
 class ForecastCollectionViewCell: UICollectionViewCell
 {
-    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var condition: UILabel!
     @IBOutlet weak var temp: UILabel!

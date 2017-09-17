@@ -129,11 +129,21 @@ extension ForecastViewController:UICollectionViewDataSource
             
             if forecast.isHottest
             {
-                cell?.backgroundColor = orange
+                cell?.timeLabel.textColor = orange
+                cell?.condition.textColor = orange
+                cell?.temp.textColor = orange
             }
             else if forecast.isColdest
             {
-                cell?.backgroundColor = blue
+                cell?.timeLabel.textColor = blue
+                cell?.condition.textColor = blue
+                cell?.temp.textColor = blue
+            }
+            else
+            {
+                cell?.timeLabel.textColor = UIColor.black
+                cell?.condition.textColor = UIColor.black
+                cell?.temp.textColor = UIColor.black
             }
         }
         
