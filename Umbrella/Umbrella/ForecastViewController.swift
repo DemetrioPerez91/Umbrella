@@ -29,8 +29,6 @@ class ForecastViewController: UIViewController {
         DataManager.instance.refreshtTableDelegate = self
         forecastTableView.delegate = self
         forecastTableView.dataSource = self
-        DataManager.instance.refreshConditionsDelegate?.refreshConditions()
-        DataManager.instance.refreshtTableDelegate?.refresh()
         forecastTableView.rowHeight = 400
         
         
@@ -39,6 +37,9 @@ class ForecastViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        DataManager.instance.refreshConditionsDelegate?.refreshConditions()
+        DataManager.instance.refreshtTableDelegate?.refresh()
+
     }
     
     func setupConditionsShadow()
@@ -50,6 +51,8 @@ class ForecastViewController: UIViewController {
         currentConditionView.layer.shadowRadius = 10
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

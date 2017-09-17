@@ -86,5 +86,22 @@ class DataManager: NSObject
         })
     }
     
+    func setLocation()
+    {
+        WebServiceManager.instance.requestData(.Geolocation, completion:
+            {
+                data in
+                if let d = data{
+                    JsonParser.instance.parseCityState(d)
+                    self.setCurrentCondition()
+                    self.setForecast()
+                }
+                else
+                {
+                    self.setLocation()
+                }
+        })
+    }
+    
 
 }

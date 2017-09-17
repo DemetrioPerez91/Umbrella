@@ -44,7 +44,7 @@ class OptionsViewController: UIViewController {
         {
             if ZipCodeReader.instance.isZipCodeValid(text)
             {
-                _ = navigationController?.popViewController(animated: true)
+                DataManager.instance.setLocation()
             }
             else
             {
