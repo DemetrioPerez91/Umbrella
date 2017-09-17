@@ -45,10 +45,15 @@ class DataManager: NSObject
         WebServiceManager.instance.requestData(.Geolocation, completion:
         {
             data in
-            JsonParser.instance.parseCityState(data!)
-            self.setCurrentCondition()
-            self.setForecast()
-            
+            if let d = data{
+                JsonParser.instance.parseCityState(d)
+                self.setCurrentCondition()
+                self.setForecast()
+            }
+            else
+            {
+                self.setData()
+            }
         })
     }
     func setCurrentCondition()
