@@ -40,10 +40,7 @@ class ForecastViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
-    override func viewDidDisappear(_ animated: Bool) {
-
-        navigationController?.isNavigationBarHidden = false
-    }
+    
     func setupConditionsShadow()
     {
         currentConditionView.layer.shadowColor = UIColor.black.cgColor

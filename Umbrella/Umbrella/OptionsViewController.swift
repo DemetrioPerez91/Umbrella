@@ -10,10 +10,13 @@ import UIKit
 
 class OptionsViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var warning: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +24,34 @@ class OptionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        warning.text = ""
+        UIView.animate(withDuration: 0.5, animations: {
+             self.navigationController?.isNavigationBarHidden = false
+        })
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.navigationController?.isNavigationBarHidden = true
+        })
+    }
+    
+    
+    @IBAction func saveZipCode(_ sender: Any)
+    {
+        if let text = textField.text
+        {
+            if ZipCodeReader.instance.isZipCodeValid(text)
+            {
+                _ = navigationController?.popViewController(animated: true)
+            }
+            else
+            {
+                warning.text = "invalid zip code"
+            }
+        }
+    }
+    
+    
 }
