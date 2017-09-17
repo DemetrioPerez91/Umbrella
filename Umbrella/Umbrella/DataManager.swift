@@ -15,7 +15,8 @@ class DataManager: NSObject
     
     private(set) var days:[DayViewModel]=[]
     var currentConditions:ForecastVM?
-    var refreshDelegate:RefreshTableProtocol?
+    var refreshConditionsDelegate:RefreshCurrentConditions?
+    var refreshtTableDelegate:RefreshTableProtocol?
     var zipCode:String = ""
     var state:String = ""
     var city:String = ""
@@ -30,7 +31,42 @@ class DataManager: NSObject
     func setDays(days:[DayViewModel])
     {
         self.days = days
-        refreshDelegate?.refresh()
+        refreshtTableDelegate?.refresh()
+    }
+    
+    func setConditions(_ forecast:ForecastVM)
+    {
+        DataManager.instance.currentConditions = forecast
+        self.refreshConditionsDelegate?.refreshConditions()
+    }
+   
+    func setData()
+    {
+        WebServiceManager.instance.requestData(.Geolocation, completion:
+        {
+            data in
+            JsonParser.instance.parseCityState(data!)
+            self.setCurrentCondition()
+            self.setForecast()
+            
+        })
+    }
+    func setCurrentCondition()
+    {
+        WebServiceManager.instance.requestData(.Conditions, completion:
+            {
+                data in
+                JsonParser.instance.parseConditions(data!)
+                
+        })
+    }
+    func setForecast()
+    {
+        WebServiceManager.instance.requestData(.TenDays, completion:
+            {
+                data in
+                JsonParser.instance.parse10Days(data!)
+        })
     }
     
 
