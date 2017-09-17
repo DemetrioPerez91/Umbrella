@@ -56,8 +56,13 @@ class DataManager: NSObject
         WebServiceManager.instance.requestData(.Conditions, completion:
             {
                 data in
-                JsonParser.instance.parseConditions(data!)
-                
+                if let d = data{
+                    JsonParser.instance.parseConditions(d)
+                }
+                else
+                {
+                    self.setCurrentCondition()
+                }
         })
     }
     func setForecast()
@@ -65,7 +70,14 @@ class DataManager: NSObject
         WebServiceManager.instance.requestData(.TenDays, completion:
             {
                 data in
-                JsonParser.instance.parse10Days(data!)
+                
+                if let d = data{
+                    JsonParser.instance.parse10Days(d)
+                }
+                else
+                {
+                    self.setForecast()
+                }
         })
     }
     
