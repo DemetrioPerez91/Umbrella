@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else
         {
-            DataManager.instance.zipCode = "30339"
+            DataManager.instance.zipCode = "55073"
             DataManager.instance.setData()
         }
     }
