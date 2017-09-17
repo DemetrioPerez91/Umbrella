@@ -14,7 +14,7 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var warning: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DataManager.instance.zipCodeRequestResponder = self
         // Do any additional setup after loading the view.
         
     }
@@ -54,4 +54,24 @@ class OptionsViewController: UIViewController {
     }
     
     
+}
+
+
+extension OptionsViewController:ZipCodeRequestResponder
+{
+    func success() {
+        DispatchQueue.main.async {
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+        
+        
+    }
+    func failure()
+    {
+        DispatchQueue.main.async {
+            self.warning.text = "Failed to get data"
+        }
+        print("fail")
+        
+    }
 }

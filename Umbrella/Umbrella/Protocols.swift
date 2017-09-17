@@ -14,3 +14,9 @@ protocol RefreshTableProtocol {
 protocol RefreshCurrentConditions {
     func refreshConditions()
 }
+
+protocol ZipCodeRequestResponder
+{
+    func success()
+    func failure()
+}

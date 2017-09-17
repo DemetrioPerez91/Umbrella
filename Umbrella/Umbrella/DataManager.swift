@@ -17,6 +17,7 @@ class DataManager: NSObject
     var currentConditions:ForecastVM?
     var refreshConditionsDelegate:RefreshCurrentConditions?
     var refreshtTableDelegate:RefreshTableProtocol?
+    var zipCodeRequestResponder:ZipCodeRequestResponder?
     var zipCode:String = ""
     var state:String = ""
     var city:String = ""
@@ -95,10 +96,12 @@ class DataManager: NSObject
                     JsonParser.instance.parseCityState(d)
                     self.setCurrentCondition()
                     self.setForecast()
+                    self.zipCodeRequestResponder?.success()
                 }
                 else
                 {
                     self.setLocation()
+                    self.zipCodeRequestResponder?.failure()
                 }
         })
     }
