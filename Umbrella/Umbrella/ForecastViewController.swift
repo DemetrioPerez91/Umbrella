@@ -24,14 +24,25 @@ class ForecastViewController: UIViewController {
     let model:[UIColor] =  [UIColor.red, UIColor.red]
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupConditionsShadow()
         DataManager.instance.refreshConditionsDelegate = self
         DataManager.instance.refreshtTableDelegate = self
         forecastTableView.delegate = self
         forecastTableView.dataSource = self
         DataManager.instance.refreshConditionsDelegate?.refreshConditions()
         DataManager.instance.refreshtTableDelegate?.refresh()
-        forecastTableView.rowHeight = 300
+        forecastTableView.rowHeight = 400
         
+        
+    }
+    
+    func setupConditionsShadow()
+    {
+        currentConditionView.layer.shadowColor = UIColor.black.cgColor
+        currentConditionView.layer.shadowOpacity = 1
+        currentConditionView.layer.shadowOffset = CGSize.zero
+        currentConditionView.layer.shadowRadius = 10
+        currentConditionView.layer.shadowRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +55,7 @@ extension ForecastViewController:UITableViewDelegate{}
 extension ForecastViewController:UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print( DataManager.instance.days.count)
+        
         return DataManager.instance.days.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,6 +85,9 @@ extension ForecastViewController:UITableViewDataSource
         
         tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
     }
+    
+   
+    
 }
 
 extension ForecastViewController:RefreshTableProtocol
@@ -107,6 +121,8 @@ extension ForecastViewController:RefreshCurrentConditions
         }
        
     }
+    
+    
 }
 
 
@@ -114,6 +130,7 @@ extension ForecastViewController:UICollectionViewDelegate{}
 extension ForecastViewController:UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return (currentDay?.forecasts.count)!
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
