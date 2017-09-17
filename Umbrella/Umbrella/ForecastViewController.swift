@@ -17,7 +17,8 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var forecastTableView: UITableView!
     
-    
+    let orange = UIColor(colorLiteralRed: 1.0, green: 0.5519607843, blue: 0.0, alpha: 1)
+    let blue = UIColor(colorLiteralRed: 0.133333333, green: 0.7003921568, blue: 1.0, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
         DataManager.instance.refreshConditionsDelegate = self
@@ -81,6 +82,13 @@ extension ForecastViewController:RefreshCurrentConditions
                 self.stateLabel.text = DataManager.instance.location
                 self.tempLabel.text = forecast.temperatureText
                 self.conditionLabel.text = forecast.forecast.weather
+                if forecast.temperatureFloat > 60
+                {
+                    self.currentConditionView.backgroundColor = self.orange
+                }else
+                {
+                   self.currentConditionView.backgroundColor = self.blue
+                }
             }
         }
        
