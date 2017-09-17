@@ -19,6 +19,13 @@ class DataManager: NSObject
     var zipCode:String = ""
     var state:String = ""
     var city:String = ""
+    var location:String
+    {
+        get
+        {
+            return "\(city),\(state)"
+        }
+    }
     
     func setDays(days:[DayViewModel])
     {
