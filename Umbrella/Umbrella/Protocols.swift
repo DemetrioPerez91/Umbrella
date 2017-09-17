@@ -11,3 +11,6 @@ import Foundation
 protocol RefreshTableProtocol {
     func refresh()
 }
+protocol RefreshCurrentConditions {
+    func refreshConditions()
+}
