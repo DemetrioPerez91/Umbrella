@@ -19,9 +19,10 @@ class DayViewModel: NSObject
         let VM = ForecastVM(forecast)
         if forecasts.count == 0
         {
-            forecasts.append(VM)
             hottest = VM
-            coldest = VM   
+            coldest = VM
+            forecasts.append(VM)
+            
         }
         else
         {
@@ -29,8 +30,7 @@ class DayViewModel: NSObject
             {
                 hottest = VM
             }
-            
-            if VM.temperatureFloat < (coldest?.temperatureFloat)!
+            else if VM.temperatureFloat < (coldest?.temperatureFloat)!
             {
                 coldest = VM
             }
