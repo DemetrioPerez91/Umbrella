@@ -104,11 +104,24 @@ class JsonParser: NSObject
                 newDay.append(forecast)
                 if dayCurrentHour == 23
                 {
+                    newDay.hottest?.isHottest = true
+                    newDay.coldest?.isColdest = true
+                    var i = 0
+                    print("Day \(days.count + 1)||||||||||||||||||||||||||||||")
+                    for fore in newDay.forecasts
+                    {
+                        i = i + 1
+                        print("Forecast \(i)")
+                        print("HOUR: \(fore.time)")
+                        print("is Hottest: \(fore.isHottest)")
+                        print("is coldest: \(fore.isColdest)")
+                    }
                     days.append(newDay)
                     newDay = DayViewModel()
                 }
                 
             }
+            
         }
         DataManager.instance.setDays(days: days)
         
