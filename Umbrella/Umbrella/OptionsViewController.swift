@@ -12,6 +12,9 @@ class OptionsViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var warning: UILabel!
+    let invalidCode = "Invalid zip code"
+    let failureText = "Failed to get data"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DataManager.instance.zipCodeRequestResponder = self
@@ -48,7 +51,7 @@ class OptionsViewController: UIViewController {
             }
             else
             {
-                warning.text = "invalid zip code"
+                warning.text = NSLocalizedString(invalidCode, comment: "Invalid")
             }
         }
     }
@@ -69,7 +72,7 @@ extension OptionsViewController:ZipCodeRequestResponder
     func failure()
     {
         DispatchQueue.main.async {
-            self.warning.text = "Failed to get data"
+            self.warning.text = NSLocalizedString(self.failureText, comment: "FAIL")
         }
         print("fail")
         

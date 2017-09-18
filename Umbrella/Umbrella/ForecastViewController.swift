@@ -60,11 +60,16 @@ class ForecastViewController: UIViewController {
         currentConditionView.layer.shadowRadius = 10
     }
 
+    let alertTitle = "Enter Zip Code"
+    let alertMessage = "You need an american Zip Code for this app to work"
+    
     func showAlert()
     {
         func configurationTextField(textField: UITextField!){}
         
-        let alert = UIAlertController(title: "Enter Zip Code", message: "You need an american Zip Code for this app to work", preferredStyle: .alert)
+        let localizedAlert = NSLocalizedString(alertTitle, comment: "zipcode")
+        let localizedMessage = NSLocalizedString(alertMessage, comment: "zipcode")
+        let alert = UIAlertController(title: localizedAlert, message: localizedMessage , preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: configurationTextField)
         
