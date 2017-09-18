@@ -1,8 +1,14 @@
+# Umbrella
+Coding Test for Walmart Recruitment
+
+
+
+*Change Log
 commit 8504574a677c071879e67da41de4af2ee06b21a9
 Author: Demetrio <dem3perez@gmail.com>
 Date:   Mon Sep 18 02:27:49 2017 -0400
 
-    Corrcting Test
+    Correcting Test
 
 commit 1b606be9078c38d33e19a277b2648cab2330c0ff
 Author: Demetrio <dem3perez@gmail.com>
