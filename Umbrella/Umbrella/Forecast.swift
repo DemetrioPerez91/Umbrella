@@ -6,10 +6,9 @@
 //  Copyright © 2017 DemetrioPerez. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-
-class Forecast:NSObject
+struct Forecast
 {
     let temperature:Float
     let time:String

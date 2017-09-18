@@ -18,15 +18,8 @@ class OptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataManager.instance.zipCodeRequestResponder = self
-        // Do any additional setup after loading the view.
-        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         warning.text = ""
         UIView.animate(withDuration: 0.5, animations: {
@@ -43,16 +36,14 @@ class OptionsViewController: UIViewController {
     
     @IBAction func saveZipCode(_ sender: Any)
     {
-        if let text = textField.text
-        {
-            if ZipCodeReader.instance.isZipCodeValid(text)
-            {
-                DataManager.instance.setData()
-            }
-            else
-            {
-                warning.text = NSLocalizedString(invalidCode, comment: "Invalid")
-            }
+        guard let text = textField.text else { return }
+
+        if ZipCodeReader.isZipCodeValid(zipcodeString: text) {
+            DataManager.instance.zipCode = text
+            DataManager.instance.setData()
+        }
+        else {
+            warning.text = NSLocalizedString(invalidCode, comment: "Invalid")
         }
     }
     
@@ -75,6 +66,5 @@ extension OptionsViewController:ZipCodeRequestResponder
             self.warning.text = NSLocalizedString(self.failureText, comment: "FAIL")
         }
         print("fail")
-        
     }
 }

@@ -6,13 +6,13 @@
 //  Copyright © 2017 DemetrioPerez. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class JsonParser: NSObject
+class JsonParser
 {
-    static let  instance = JsonParser()
-    override init(){}
-    func parseCityState(_ dictionary:[String:AnyObject],completion:(Bool)->())
+    static let instance = JsonParser()
+    
+    func parseCityState(dictionary: [String:AnyObject], completion:(Bool)->())
     {
         if let location = dictionary["location"] as? [String:AnyObject]
         {
@@ -34,12 +34,12 @@ class JsonParser: NSObject
         }
     }
     
-    func parseConditions(_ dicitonary:[String:AnyObject])
+    func parseConditions(dictionary: [String:AnyObject])
     {
-        var temp:Float = 0.0
-        var weather:String = ""
-        var time:String = ""
-        if let currentobservation = dicitonary["current_observation"] as? [String:AnyObject]
+        var temp: Float = 0.0
+        var weather: String = ""
+        var time: String = ""
+        if let currentobservation = dictionary["current_observation"] as? [String:AnyObject]
         {
             if let tempf = currentobservation["temp_f"] as? Float
             {
@@ -52,8 +52,6 @@ class JsonParser: NSObject
             
             let date = Date()
             time = date.getCurrentTimeHourMinutes()
-            
-            
         }
         
         let forecast = Forecast(temperature: temp, time: time, weather: weather)
@@ -62,11 +60,12 @@ class JsonParser: NSObject
         
     }
     
-    func parse10Days(_ dictionary:[String:AnyObject])
+    func parse10Days(dictionary: [String:AnyObject])
     {
         //Prepare day array
         var days:[DayViewModel] = []
         var dayCurrentHour = 0
+        
         //Get RESULTS FROM DICTIONARY
         if let hourly = dictionary["hourly_forecast"] as? [AnyObject]
         {
@@ -97,10 +96,10 @@ class JsonParser: NSObject
                 
                 if let temperature = forecast["temp"] as? [String:AnyObject]
                 {
-                    guard let degrees = Float((temperature["english"] as? String!)!)else
-                    {
-                        print("Failure")
-                        return
+                    guard let englishString = temperature["english"] as? String,
+                        let degrees = Float(englishString) else {
+                            print("failure")
+                            return
                     }
                     temp = degrees
 

@@ -6,49 +6,17 @@
 //  Copyright © 2017 DemetrioPerez. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ZipCodeReader: NSObject
+class ZipCodeReader
 {
-    static let instance = ZipCodeReader()
-    override private init(){}
-    
-    //Check if zipCode is acceptable
-    func isZipCodeValid( _ zipCode:String)->Bool
-    {
-        var result = false
-        if zipCode.characters.count == 5
-        {
-            if Int(zipCode) != nil
-            {
-                DataManager.instance.zipCode = zipCode
-                result = true
-            }
-            
-        }
-        return result
-    }
-    
-
-    func isZipCodeValid( _ zipCode:String, completion:(Bool)->())
-    {
-        var result = false
-        if zipCode.characters.count == 5
-        {
-            if Int(zipCode) != nil
-            {
-                result = true
-                DataManager.instance.zipCode = zipCode
-                completion(result)
-            }
-            
-        }
-        else
-        {
-            completion(result)
-
-        }
+    class func isZipCodeValid(zipcodeString: String) -> Bool {
         
-    }
+        if zipcodeString.characters.count == 5,
+            let _ = Int(zipcodeString) {
 
+            return true
+        }
+        return false
+    }
 }

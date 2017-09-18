@@ -25,8 +25,7 @@ class DayTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setCollectionViewDataSourceDelegate
-        <D: protocol<UICollectionViewDataSource, UICollectionViewDelegate>>
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>
         (dataSourceDelegate: D, forRow row: Int) {
         
         collectionView.delegate = dataSourceDelegate

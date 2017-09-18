@@ -8,15 +8,14 @@
 
 import Foundation
 
-protocol RefreshTableProtocol {
+protocol RefreshTableProtocol: class {
     func refresh()
 }
-protocol RefreshCurrentConditions {
+protocol RefreshCurrentConditions: class {
     func refreshConditions()
 }
 
-protocol ZipCodeRequestResponder
-{
+protocol ZipCodeRequestResponder: class {
     func success()
     func failure()
 }

@@ -8,15 +8,13 @@
 
 import Foundation
 
-enum WeatherEnum:String {
+enum WeatherEnum: String {
     case Sunny = "Sunny", PartlyCloudy = "Partly Cloudy"
-    
 }
 
 
 enum RequestType  {
     case Geolocation, Conditions, TenDays
-    
 }
 
 

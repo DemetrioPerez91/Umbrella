@@ -6,89 +6,88 @@
 //  Copyright © 2017 DemetrioPerez. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class WebServiceManager: NSObject
+fileprivate struct webAPI {
+    
+    static var apiGeolookupURL: String {
+        return "https://api.wunderground.com/api/4dfa0dce4b7cc546/geolookup/q/\(DataManager.instance.zipCode).json"
+    }
+
+    static var api10DayForecastURL: String {
+        let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/hourly10day/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
+        let trimmedString = url.replacingOccurrences(of: " ", with: "_")
+        return trimmedString
+    }
+    
+    static var apiConditionsURL: String {
+        let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/conditions/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
+        let trimmedString = url.replacingOccurrences(of: " ", with: "_")
+        
+        return trimmedString
+    }
+}
+
+class WebServiceManager
 {
     static let instance = WebServiceManager()
-    override private init(){}
+    private init(){}
+    
     let config = URLSessionConfiguration.default
-    
-    
-    var apiGeolookupURL:String
-    {
-        get
-        {
-            return "https://api.wunderground.com/api/4dfa0dce4b7cc546/geolookup/q/\(DataManager.instance.zipCode).json"
-        }
-    }
-    var api10DayForecastURL:String
-    {
-        get
-        {
-            let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/hourly10day/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
-            let trimmedString = url.replacingOccurrences(of: " ", with: "_")
-            return trimmedString
-        }
-        
-    }
-    
-    var apiConditionsURL:String
-    {
-        get
-        {
-            let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/conditions/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
-            let trimmedString = url.replacingOccurrences(of: " ", with: "_")
-            
-            return trimmedString
-            
-        }
-    }
-    
-    //get jsons from API
-    func requestData(_ requestType:RequestType,completion:@escaping([String:AnyObject]?)->())
+
+    func requestData(_ requestType:RequestType, completion:@escaping([String:AnyObject]?)->())
     {
         let session = URLSession(configuration: config)
-        let request = getRequest(requestType: requestType)
-        let task = session.dataTask(with: request, completionHandler: {
-            (data,response,error) in
+        guard let request = getRequest(requestType: requestType) else {
+            completion(nil)
+            return
+        }
+        
+        session.dataTask(with: request) { (data,response,error) in
             
             if (error != nil||data == nil)
             {
                 print(error!.localizedDescription)
+                return
+            }
+            
+            guard let weatherData = data else {
+                completion(nil)
+                return
+            }
+            
+            do{
+                let rootDictionary = try JSONSerialization
+                    .jsonObject(with: weatherData,
+                                options: .allowFragments) as? [String:AnyObject]
+                completion(rootDictionary)
                 
+            }catch {
+                print("Error with Json")
+                completion(nil)
             }
-            else{
-                do{
-                    let rootDictionary = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
-                    completion(rootDictionary)
-                    
-                }catch {
-                    print("Error with Json")
-                    completion(nil)
-                }
-            }
-        })
-        task.resume()
+        }.resume()
     }
+    
     //set request depending on type
-    func getRequest(requestType:RequestType) ->URLRequest
+    private func getRequest(requestType: RequestType) -> URLRequest?
     {
-        var result:URLRequest?
+        
         switch requestType {
         case .Conditions:
-            result = URLRequest(url: URL(string: apiConditionsURL)!)
-            break
+            
+            guard let url = URL(string: webAPI.apiConditionsURL) else { return nil }
+            return URLRequest(url: url)
+
         case .TenDays:
-            result = URLRequest(url: URL(string: api10DayForecastURL)!)
-            break
+            
+            guard let url = URL(string: webAPI.api10DayForecastURL) else { return nil }
+            return URLRequest(url: url)
+
         case .Geolocation:
-            result = URLRequest(url: URL(string: apiGeolookupURL)!)
+            
+            guard let url = URL(string: webAPI.apiGeolookupURL) else { return nil }
+            return URLRequest(url: url)
         }
-        return result!
     }
-    
-    
-    
-    
 }
