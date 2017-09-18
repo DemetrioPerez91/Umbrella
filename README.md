@@ -4,6 +4,7 @@ Coding Test for Walmart Recruitment
 
 
 *Change Log
+
 commit 8504574a677c071879e67da41de4af2ee06b21a9
 Author: Demetrio <dem3perez@gmail.com>
 Date:   Mon Sep 18 02:27:49 2017 -0400
