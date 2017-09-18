@@ -1,0 +1,34 @@
+/* 
+  AppDelegate.strings
+  Umbrella
+
+  Created by User on 9/18/17.
+  Copyright © 2017 DemetrioPerez. All rights reserved.
+*/
+"Chance of Flurries" = "Oportunidad de Ráfagas";
+"Chance of Rain" = "Oportunidad de Lluvia";
+"Chance Rain" = "Oportunidad Lluvia";
+"Chance of Freezing Rain" = "Oportunidad de lluvia helada";
+"Chance of Sleet" = "Oportunidad de Aguanieve";
+"Chance of Snow" = "Oportunidad de Nieve";
+"Chance of Thunderstorms" = "Oportunidad de tormentas electricas";
+"Chance of a Thunderstorm" = "Oportunidad de tormenta electrica";
+"Clear" = "Despejado";
+"Cloudy" = "Nublado";
+"Flurries" = "Ráfagas";
+"Fog" = "Neblina";
+"Haze" = "Calina";
+"Mostly Cloudy" = "Mayormente Nublado";
+"Mostly Sunny" = "Mayormente Soleado";
+"Partly Cloudy" = "Parcialmente  Nublado";
+"Partly Sunny" = "Parcialmente Soleado";
+"Freezing Rain" = "Lluvia Helada";
+"Rain" = "Lluvia";
+"Sleet" = "Aguanieve";
+"Snow" = "Nieve";
+"Sunny" = "Soleado";
+"Thunderstorms" = "Tormenta Eléctrica";
+"Thunderstorm" = "Tormentas Eléctricas";
+"Unknown" = "Desconocido";
+"Overcast" = "Nublado";
+"Scattered Clouds" = "Nubes Dispersas";

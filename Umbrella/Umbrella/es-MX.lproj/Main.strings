@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7nO-Af-bg9"; */
+"7nO-Af-bg9.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "D8I-hR-hLg"; */
+"D8I-hR-hLg.text" = "Label";
+
+/* Class = "UILabel"; text = "0.0"; ObjectID = "GEd-bv-3c3"; */
+"GEd-bv-3c3.text" = "0.0";
+
+/* Class = "UILabel"; text = "Zip Code"; ObjectID = "LYm-sz-uiE"; */
+"LYm-sz-uiE.text" = "Zip Code";
+
+/* Class = "UINavigationItem"; title = "Options"; ObjectID = "Nby-zI-jpg"; */
+"Nby-zI-jpg.title" = "Options";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Oct-Or-xGy"; */
+"Oct-Or-xGy.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Oqt-Gn-gAM"; */
+"Oqt-Gn-gAM.text" = "Label";
+
+/* Class = "UIViewController"; title = "ForecastViewController"; ObjectID = "Tbw-dz-hdD"; */
+"Tbw-dz-hdD.title" = "ForecastViewController";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dUj-X6-8Tq"; */
+"dUj-X6-8Tq.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "eTK-6M-Jcn"; */
+"eTK-6M-Jcn.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ona-R8-gk6"; */
+"ona-R8-gk6.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qgb-H7-X59"; */
+"qgb-H7-X59.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Options"; ObjectID = "zBA-gC-uQz"; */
+"zBA-gC-uQz.normalTitle" = "Options";
