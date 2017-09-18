@@ -1,7 +1,50 @@
-# Umbrella
-Coding Test for Walmart Recruitment
+commit 8504574a677c071879e67da41de4af2ee06b21a9
+Author: Demetrio <dem3perez@gmail.com>
+Date:   Mon Sep 18 02:27:49 2017 -0400
 
-Change log
+    Corrcting Test
+
+commit 1b606be9078c38d33e19a277b2648cab2330c0ff
+Author: Demetrio <dem3perez@gmail.com>
+Date:   Mon Sep 18 02:27:40 2017 -0400
+
+    Localizing more strings
+
+commit 5d76d3fede6197b8378d1820d8dc248b17b9abff
+Author: Demetrio <dem3perez@gmail.com>
+Date:   Mon Sep 18 02:27:20 2017 -0400
+
+    Correcting Use of MVVM
+
+commit 4813df02620f38ed017fe99b58d7fd52f6949bc8
+Author: Demetrio <dem3perez@gmail.com>
+Date:   Mon Sep 18 02:13:53 2017 -0400
+
+    Update localization
+
+commit 3180c69bb9134b5a1253a33fc45a6176e60795de
+Author: DemetrioPerez91 <dem3perez@gmail.com>
+Date:   Mon Sep 18 01:52:57 2017 -0400
+
+    Added Umbrella Flowcharts.pdf
+
+commit 90cdb0ee5f131665f24122b7a945561f244df0d8
+Author: DemetrioPerez91 <dem3perez@gmail.com>
+Date:   Mon Sep 18 01:50:38 2017 -0400
+
+    Added Umbrella Flowcharts.pdf
+
+commit 3f9cd5ea848792caa866075633e708c43f1dbcd9
+Author: DemetrioPerez91 <dem3perez@gmail.com>
+Date:   Mon Sep 18 01:48:28 2017 -0400
+
+    Added Umbrella Class Diagram.pdf
+
+commit 0e1db1f0b637767e8080ddd6bbc34f0102e77728
+Author: DemetrioPerez91 <dem3perez@gmail.com>
+Date:   Mon Sep 18 01:41:04 2017 -0400
+
+    Create README.md
 
 commit aec33981c51bb4544a1ec5b8b02abd5eed748403
 Author: Demetrio <dem3perez@gmail.com>
