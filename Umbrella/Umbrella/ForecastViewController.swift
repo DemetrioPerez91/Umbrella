@@ -31,9 +31,17 @@ class ForecastViewController: UIViewController {
         forecastTableView.dataSource = self
         forecastTableView.rowHeight = 400
         
+        let delegate = UIApplication.shared.delegate as!AppDelegate
+        if delegate.shouldRequestZipCode
+        {
+            showAlert()
+        }
+        
         
         
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
@@ -51,6 +59,38 @@ class ForecastViewController: UIViewController {
         currentConditionView.layer.shadowRadius = 10
     }
 
+    func showAlert()
+    {
+        func configurationTextField(textField: UITextField!){}
+        
+        let alert = UIAlertController(title: "Enter Zip Code", message: "You need an american Zip Code for this app to work", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: configurationTextField)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (UIAlertAction)in
+            print("User click Ok button")
+            if let textfield = alert.textFields?[0].text
+            {
+                ZipCodeReader.instance.isZipCodeValid(textfield, completion:
+                {
+                    isValid in
+                    if isValid
+                    {
+                        DataManager.instance.setData()
+                    }
+                    else
+                    {
+                        self.showAlert()
+                    }
+                })
+                
+            }
+            
+        }))
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
     
     
     override func didReceiveMemoryWarning() {

@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var shouldRequestZipCode:Bool?
+    var shouldRequestZipCode:Bool = false
 
     func startUp()
     {
@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else
         {
-            DataManager.instance.zipCode = "55073"
-            DataManager.instance.setData()
+           shouldRequestZipCode = true
         }
     }
     

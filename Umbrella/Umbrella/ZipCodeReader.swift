@@ -30,4 +30,25 @@ class ZipCodeReader: NSObject
     }
     
 
+    func isZipCodeValid( _ zipCode:String, completion:(Bool)->())
+    {
+        var result = false
+        if zipCode.characters.count == 5
+        {
+            if Int(zipCode) != nil
+            {
+                result = true
+                DataManager.instance.zipCode = zipCode
+                completion(result)
+            }
+            
+        }
+        else
+        {
+            completion(result)
+
+        }
+        
+    }
+
 }
