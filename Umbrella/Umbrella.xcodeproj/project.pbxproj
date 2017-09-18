@@ -134,10 +134,11 @@
 		CE03658A1F6D6091006E4911 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
+				CE7837C11F6C67DF00F013BE /* AppDelegate.swift */,
 				CE03658B1F6D60A5006E4911 /* DataManager.swift */,
-				CE0365921F6D6355006E4911 /* ZipCodeReader.swift */,
 				CE0365961F6D6F03006E4911 /* WebServiceManager.swift */,
 				CE03659A1F6D9221006E4911 /* JsonParser.swift */,
+				CE0365921F6D6355006E4911 /* ZipCodeReader.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -180,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7837C01F6C67DF00F013BE /* Umbrella */,
+				CE0365C31F6F803F006E4911 /* Localizable.strings */,
 				CE7837CD1F6C67DF00F013BE /* Info.plist */,
 				CE7837C81F6C67DF00F013BE /* Assets.xcassets */,
 				CE0365AB1F6DFA40006E4911 /* Assets */,
@@ -200,8 +202,6 @@
 		CE7837C01F6C67DF00F013BE /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
-				CE0365C31F6F803F006E4911 /* Localizable.strings */,
-				CE7837C11F6C67DF00F013BE /* AppDelegate.swift */,
 				CE03658A1F6D6091006E4911 /* Singletons */,
 				CE03657D1F6CA150006E4911 /* Model */,
 				CE0365901F6D6179006E4911 /* View */,
@@ -383,7 +383,6 @@
 				CE0365C41F6F803F006E4911 /* es-MX */,
 			);
 			name = Localizable.strings;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		CE7837C51F6C67DF00F013BE /* Main.storyboard */ = {
