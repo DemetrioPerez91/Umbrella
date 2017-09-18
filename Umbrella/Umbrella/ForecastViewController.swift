@@ -27,6 +27,7 @@ class ForecastViewController: UIViewController {
         setupConditionsShadow()
         DataManager.instance.refreshConditionsDelegate = self
         DataManager.instance.refreshtTableDelegate = self
+        DataManager.instance.zipCodeRequestResponder = self
         forecastTableView.delegate = self
         forecastTableView.dataSource = self
         forecastTableView.rowHeight = 400
@@ -215,4 +216,14 @@ extension ForecastViewController:UICollectionViewDataSource
         return cell!
     }
     
+}
+
+extension ForecastViewController:ZipCodeRequestResponder
+{
+    func success() {
+        UserDefaults.standard.set(DataManager.instance.zipCode, forKey: "zipcode")
+    }
+    func failure() {
+        showAlert()
+    }
 }

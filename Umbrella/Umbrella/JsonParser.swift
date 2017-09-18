@@ -12,7 +12,7 @@ class JsonParser: NSObject
 {
     static let  instance = JsonParser()
     override init(){}
-    func parseCityState(_ dictionary:[String:AnyObject])
+    func parseCityState(_ dictionary:[String:AnyObject],completion:(Bool)->())
     {
         if let location = dictionary["location"] as? [String:AnyObject]
         {
@@ -26,6 +26,11 @@ class JsonParser: NSObject
             {
                 DataManager.instance.state = state
             }
+            completion(true)
+        }
+        else
+        {
+            completion(false)
         }
     }
     

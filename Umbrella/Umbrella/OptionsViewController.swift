@@ -44,7 +44,7 @@ class OptionsViewController: UIViewController {
         {
             if ZipCodeReader.instance.isZipCodeValid(text)
             {
-                DataManager.instance.setLocation()
+                DataManager.instance.setData()
             }
             else
             {
@@ -63,7 +63,7 @@ extension OptionsViewController:ZipCodeRequestResponder
         DispatchQueue.main.async {
             _ = self.navigationController?.popViewController(animated: true)
         }
-        
+         UserDefaults.standard.set(DataManager.instance.zipCode, forKey: "zipcode")
         
     }
     func failure()

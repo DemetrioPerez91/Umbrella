@@ -41,22 +41,7 @@ class DataManager: NSObject
         self.refreshConditionsDelegate?.refreshConditions()
     }
    
-    func setData()
-    {
-        WebServiceManager.instance.requestData(.Geolocation, completion:
-        {
-            data in
-            if let d = data{
-                JsonParser.instance.parseCityState(d)
-                self.setCurrentCondition()
-                self.setForecast()
-            }
-            else
-            {
-                self.setData()
-            }
-        })
-    }
+    
     func setCurrentCondition()
     {
         WebServiceManager.instance.requestData(.Conditions, completion:
@@ -87,20 +72,32 @@ class DataManager: NSObject
         })
     }
     
-    func setLocation()
+    func setData()
     {
         WebServiceManager.instance.requestData(.Geolocation, completion:
             {
                 data in
                 if let d = data{
-                    JsonParser.instance.parseCityState(d)
-                    self.setCurrentCondition()
-                    self.setForecast()
-                    self.zipCodeRequestResponder?.success()
+                    JsonParser.instance.parseCityState(d, completion:
+                    { isValid in
+                        if isValid
+                        {
+                            
+                            self.setCurrentCondition()
+                            self.setForecast()
+                            self.zipCodeRequestResponder?.success()
+
+                        }
+                        else
+                        {
+                            self.zipCodeRequestResponder?.failure()
+                        }
+                        
+                    })
+                    
                 }
                 else
                 {
-                    self.setLocation()
                     self.zipCodeRequestResponder?.failure()
                 }
         })

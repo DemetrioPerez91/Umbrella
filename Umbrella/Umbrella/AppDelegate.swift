@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func startUp()
     {
-        if let zipcode = UserDefaults.standard.string(forKey: "zipCode")
+        if let zipcode = UserDefaults.standard.string(forKey: "zipcode")
         {
             DataManager.instance.zipCode = zipcode
             DataManager.instance.setData()

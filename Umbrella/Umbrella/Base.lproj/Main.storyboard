@@ -265,8 +265,8 @@
                                             <constraint firstAttribute="width" constant="200" id="K2C-t8-15q"/>
                                             <constraint firstAttribute="height" constant="14" id="KoD-Q5-ojZ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.97583204507827759" green="0.25788223743438721" blue="0.045037470757961273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
