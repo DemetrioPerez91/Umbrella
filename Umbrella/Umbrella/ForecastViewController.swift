@@ -16,12 +16,18 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var forecastTableView: UITableView!
+    let alertTitle = "Enter Zip Code"
+    let alertMessage = "You need an american Zip Code for this app to work"
+    let day = "Day"
+    let today = "Today"
+    let tomorrow = "Tomorrow"
     
     var currentDay:DayViewModel?
     
     let orange = UIColor(colorLiteralRed: 1.0, green: 0.5519607843, blue: 0.0, alpha: 1)
     let blue = UIColor(colorLiteralRed: 0.133333333, green: 0.7003921568, blue: 1.0, alpha: 1)
     let model:[UIColor] =  [UIColor.red, UIColor.red]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConditionsShadow()
@@ -38,11 +44,7 @@ class ForecastViewController: UIViewController {
             showAlert()
         }
         
-        
-        
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
@@ -60,8 +62,6 @@ class ForecastViewController: UIViewController {
         currentConditionView.layer.shadowRadius = 10
     }
 
-    let alertTitle = "Enter Zip Code"
-    let alertMessage = "You need an american Zip Code for this app to work"
     
     func showAlert()
     {
@@ -119,15 +119,15 @@ extension ForecastViewController:UITableViewDataSource
         
         if indexPath.row == 0
         {
-             cell?.DayLabel.text  = "Today"
+             cell?.DayLabel.text  = NSLocalizedString(today, comment: "today")
         }
         else if indexPath.row == 1
         {
-            cell?.DayLabel.text  = "Tomorrow"
+            cell?.DayLabel.text  = NSLocalizedString(tomorrow, comment: "tomorrow")
         }
         else
         {
-            cell?.DayLabel.text = "Day \(indexPath.row + 1)"
+            cell?.DayLabel.text = "\(NSLocalizedString(day, comment: "day")) \(indexPath.row + 1)"
         }
         return cell!
     }
@@ -163,7 +163,7 @@ extension ForecastViewController:RefreshCurrentConditions
             {
                 self.stateLabel.text = DataManager.instance.location
                 self.tempLabel.text = forecast.temperatureText
-                self.conditionLabel.text = forecast.forecast.weather
+                self.conditionLabel.text = forecast.weatherString
                 if forecast.temperatureFloat > 60
                 {
                     self.currentConditionView.backgroundColor = self.orange
@@ -195,7 +195,7 @@ extension ForecastViewController:UICollectionViewDataSource
         
         if let forecast = currentDay?.forecasts[indexPath.row]{
             cell?.timeLabel.text = forecast.time
-            cell?.condition.text = forecast.forecast.weather
+            cell?.condition.text = forecast.weatherString
             cell?.temp.text = forecast.temperatureText
             
             if forecast.isHottest

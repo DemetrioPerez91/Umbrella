@@ -36,3 +36,6 @@
 "Invalid zip code" = "Código inválido";
 "Enter Zip Code" = "Introduce Código Postal";
 "You need an american Zip Code for this app to work" = "Necesitas un Código Postal americano para usar esta aplicación";
+"Day" = "Día";
+"Today" = "Hoy";
+"Tomorrow" = "Mañana";
