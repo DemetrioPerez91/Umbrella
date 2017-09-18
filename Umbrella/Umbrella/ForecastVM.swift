@@ -30,6 +30,11 @@ class ForecastVM: NSObject
             
         }
     }
+    var weatherString:String
+    {
+        get{return NSLocalizedString(forecast.weather, comment: "forecast") }
+    }
+    
     
     var temperatureFloat:Float{get{return forecast.temperature}}
     

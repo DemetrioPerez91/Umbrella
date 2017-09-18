@@ -19,6 +19,6 @@ class Forecast:NSObject
     {
         self.temperature = temperature
         self.time = time
-        self.weather = NSLocalizedString(weather, comment: "forecast") 
+        self.weather = weather
     }
 }
