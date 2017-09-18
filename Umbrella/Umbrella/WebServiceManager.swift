@@ -27,7 +27,7 @@ class WebServiceManager: NSObject
         get
         {
             let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/hourly10day/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
-            let trimmedString = url.removingWhitespaces()
+            let trimmedString = url.replacingOccurrences(of: " ", with: "_")
             return trimmedString
         }
         
@@ -38,7 +38,7 @@ class WebServiceManager: NSObject
         get
         {
             let url = "https://api.wunderground.com/api/4dfa0dce4b7cc546/conditions/q/\(DataManager.instance.state)/\(DataManager.instance.city).json"
-            let trimmedString = url.removingWhitespaces()
+            let trimmedString = url.replacingOccurrences(of: " ", with: "_")
             
             return trimmedString
             
