@@ -33,7 +33,7 @@ class JsonParsrTestCase: XCTestCase {
         WebServiceManager.instance.requestData(.Geolocation, completion:
         {
                 dictionary in
-            JsonParser.instance.parseCityState(dictionary!)
+            JsonParser.instance.parseCityState(dictionary!,completion:{_ in})
             expectParse.fulfill()
         })
         waitForExpectations(timeout: 20, handler: {
